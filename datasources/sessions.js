@@ -11,7 +11,7 @@ class SessionsAPI extends DataSource {
     }
 
     getSessions() {
-        
+     return sessions   
     }
 }
 

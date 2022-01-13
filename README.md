@@ -9,4 +9,4 @@ __*[npm i apollo-server](https://www.npmjs.com/package/apollo-server?activeTab=v
 after that 
 
 # get this for data resource
---*[npm i apollo-datasource](https://www.apollographql.com/docs/tutorial/data-source/)*--
+__*[npm i apollo-datasource](https://www.apollographql.com/docs/tutorial/data-source/)*__

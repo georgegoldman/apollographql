@@ -12,7 +12,7 @@ after that
 
 __*[npm i apollo-datasource](https://www.apollographql.com/docs/tutorial/data-source/)*__
 
-## for filterin 
+## for filtering 
 
 using lodash
 

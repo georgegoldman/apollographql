@@ -19,6 +19,7 @@ const server = new ApolloServer({
         if(err.extensions.code == 'INTERNAL_SERVER_ERROR') {
             return new ApolloError('we are having some trouble', 'ERROR', {token: "uniquetoken"})
         }
+        return err
     }
  })
 

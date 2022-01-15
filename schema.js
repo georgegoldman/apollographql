@@ -8,7 +8,7 @@ type Query {
         description: String,
         startAt:String,
         endsAt: String,
-        room: String,
+        room: Room,
         day: String,
         format: String,
         track: String @deprecated(reason: " do not fit into a single track, we will be migrating to a tag bases system in the future"),
@@ -16,6 +16,12 @@ type Query {
     sessionById(id:ID): Session
     speakers: [Speaker]
     speakerById(id: ID): Speaker
+}
+
+enum Room{
+    EUROPA
+    SOL
+    SATURN
 }
 
 type Mutation{

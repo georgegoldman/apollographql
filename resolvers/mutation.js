@@ -1,5 +1,8 @@
-module.exports =    { 
+module.exports = { 
     toggleFavoriteSession: (parent, {id}, {dataSources}, info) => {
-    return dataSources.sessionAPI.getSessionById(id);
+    return dataSources.sessionAPI.toggleFavoriteSession(id);
+    },
+    addNewSession: (parent, {session}, { dataSources }, info) => {
+        return dataSources.sessionAPI.addNewSession(session)
     }
 }

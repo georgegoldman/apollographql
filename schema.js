@@ -13,7 +13,7 @@ type Query {
         format: String,
         track: String @deprecated(reason: " do not fit into a single track, we will be migrating to a tag bases system in the future"),
         level: String): [Session],
-    sessionById(id:ID): Session
+    sessionById(id:ID): SessionOrError
     speakers: [Speaker]
     speakerById(id: ID): Speaker
 }
@@ -22,6 +22,13 @@ enum Room{
     EUROPA
     SOL
     SATURN
+}
+
+union SessionOrError = Session | Error
+type Error {
+    code: String
+    message: String
+    token: String
 }
 
 type Mutation{

@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer, gql, ApolloError } = require('apollo-server')
 const SessionAPI = require('./datasources/sessions')
 const SpeakerAPI = require('./datasources/speakers')
 
@@ -11,7 +11,15 @@ const dataSources = () => ({
     speakerAPI: new SpeakerAPI(),
 })
 const server = new ApolloServer({ 
-    typeDefs, resolvers, dataSources,
+    typeDefs,
+    resolvers,
+    dataSources,
+    debug: false,
+    formatError: (err) => {
+        if(err.extensions.code == 'INTERNAL_SERVER_ERROR') {
+            return new ApolloError('we are having some trouble', 'ERROR', {token: "uniquetoken"})
+        }
+    }
  })
 
 server.listen(

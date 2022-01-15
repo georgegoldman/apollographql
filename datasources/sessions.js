@@ -18,6 +18,12 @@ class SessionsAPI extends DataSource {
         const session = _.filter(sessions, {id:parseInt(id)})
         return session[0]
     }
+
+    toggleFavoriteSession(id) {
+        const session = _.filter(sessions, {id:parseInt(id)})
+        session.favourite = !session[0].favourite
+        return session[0]
+    }
 }
 
 module.exports = SessionsAPI
